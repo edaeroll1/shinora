@@ -1,0 +1,17 @@
+{
+  "name": "shinora",
+  "version": "1.0.0",
+  "description": "Takı satış web sitesi",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Miyase Eda Erol",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "sqlite3": "^5.1.7"
+  }
+}

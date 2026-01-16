@@ -1,0 +1,260 @@
+/*Body için genel boşluk sıfırlama ve arka plan rengi tanımı*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2d9de !important; 
+}
+
+/*Navbar link renk ve hover efektleri*/
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.7) !important;
+    transition: color 0.3s ease;
+}
+.navbar-nav .nav-link:hover {
+    color: #ffc107 !important; 
+}
+
+/*Tablo alanları için özel scrollbar ve admin panel stil ayarları*/
+.table-responsive {
+    background-color: #1b0707 !important; 
+    border: 1px solid #1b0707 !important;
+    border-radius: 10px;
+    overflow: auto;
+    margin-bottom: 30px;
+    max-height: calc(100vh - 420px); 
+    scrollbar-gutter: stable; 
+}
+
+.table-responsive::-webkit-scrollbar,
+.admin-scroll-wrapper::-webkit-scrollbar { 
+    width: 6px; 
+    height: 6px;
+}
+
+.table-responsive::-webkit-scrollbar-track,
+.admin-scroll-wrapper::-webkit-scrollbar-track { 
+    background: transparent !important; 
+}
+
+.table-responsive::-webkit-scrollbar-thumb,
+.admin-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        to bottom,
+        #bf953f 0%,
+        #fcf6ba 45%,
+        #b38728 55%,
+        #fbf5b7 65%,
+        #aa771c 100%
+    ) !important;
+    border-radius: 20px;
+    min-height: 80px; 
+}
+
+/*Form elemanları için altın tonlu focus efekti*/
+.form-control,
+.form-select {
+    border: 1px solid #dee2e6 !important;
+    background-color: #fff !important;
+    color: #1b0707 !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #b38728 !important;
+    box-shadow: 0 0 0 0.25rem rgba(179, 135, 40, 0.25) !important;
+}
+
+/*Admin paneli butonları için koyu arka plan ve altın çerçeveli stil*/
+.admin-btn {
+    background-color: #1b0707 !important;
+    border: 1px solid #bf953f !important;
+    border-radius: 6px;
+    padding: 9px 8px !important;
+    font-size: 11px !important;
+}
+
+/*Altın degrade efektli, büyük harfli ve vurgulu metin stili*/
+.gold-text {
+    background-image: linear-gradient(
+        to bottom,
+        #bf953f 0%,
+        #fcf6ba 45%,
+        #b38728 55%,
+        #fbf5b7 65%,
+        #aa771c 100%
+    ) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+
+    font-family: sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 12px !important; 
+}
+
+/*Tablo başlığı için altın gradyanlı ve sabit (sticky) tasarım*/
+.table thead {
+    background-color: #1b0707 !important;
+}
+
+.table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 15px !important;
+    text-align: center;
+    border: none !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    background: linear-gradient(
+        to bottom,
+        #bf953f 0%,
+        #fcf6ba 45%,
+        #b38728 55%,
+        #fbf5b7 65%,
+        #aa771c 100%
+    );
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.table thead::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #b38728 !important;
+}
+
+/*Sipariş tablosu satır ve hover efektleri*/
+#ordersTableBody td {
+    background-color: white !important;
+    color: #1b0707 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    padding: 15px !important;
+    text-align: center;
+    border-bottom: 1px solid rgba(27, 7, 7, 0.05) !important;
+}
+
+#ordersTableBody tr {
+    transition: background-color 0.3s ease;
+}
+
+#ordersTableBody tr:hover td {
+    background-color: #fff6e6 !important; 
+}
+
+#ordersTableBody tr:hover {
+    box-shadow: inset 5px 0 0 #bf953f;
+}
+
+/*Admin ürün listesi için scroll alanı*/
+.admin-scroll-wrapper {
+    max-height: 680px !important; 
+    overflow-y: auto !important;
+    padding: 15px; 
+    background: white; 
+    border: 1px solid #dee2e6; 
+    border-radius: 10px;
+}
+
+/*Tüm sayfalarda ve admin alanlarında kullanılan h2 başlıklarının font,renk ve boşluk ayarları*/
+.container h2,
+.col-lg-4 h2,
+.col-lg-8 h2,
+.col-12 h2 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: #1b0707 !important;
+    text-align: center !important;
+    margin-top: -25px !important;
+    margin-bottom: 25px !important;
+    letter-spacing: 1px;
+}
+
+/*Form ve kartlar için ortak border-radius*/
+#productForm,
+.product-form-card,
+.col-lg-4 > div {
+    border-radius: 10px !important;
+}
+
+/*Admin ürün listesinde yer alan düzenle/sil butonlarının görünüm ve altın gradient metin stilleri*/
+#adminProductList .btn-outline-warning,
+#adminProductList .btn-outline-danger {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px !important;
+    height: 34px !important;
+    background-color: #1b0707 !important;
+    border: 1px solid #bf953f !important;
+    border-radius: 8px !important;
+    padding: 0 !important;
+}
+
+/*Siparişler tablosunda adres (4.sütun) hücresinin okunabilirliğini artıran metin stilleri*/
+#ordersTableBody td:nth-child(4),
+#ordersTableBody td:nth-child(4) * {
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    color: #1b0707 !important;
+}
+
+/*Admin panelindeki ürün kartlarının arka plan, hover animasyon ve görsel stil ayarları*/
+#adminProductList .bg-light {
+    background-color: #ffffff !important; 
+}
+
+#adminProductList .card {
+    background-color: #ffffff !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#adminProductList .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(27, 7, 7, 0.1) !important;
+    border-color: #bf953f !important;
+}
+
+#adminProductList .card img {
+    background-color: #ffffff !important;
+}
+
+/*Arama alanının maksimum genişliğini sınırlama*/
+.search-wrapper {
+    max-width: 320px;
+}
+
+/*Sepet ikonundaki ürün sayacı konum ayarı*/
+#cartCount {
+    top: -5px;
+    right: -5px;
+}
+
+/*Ürün açıklaması alanı için minimum yükseklik ayarı*/
+#description {
+    min-height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+

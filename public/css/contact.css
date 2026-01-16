@@ -1,0 +1,113 @@
+/*Contact sayfası ana düzen ve üstten hizalama ayarları*/
+.contact-section {
+  min-height: calc(100vh - 80px); 
+  background-color: #f2d9de;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start !important; 
+  padding-top: 5px !important; 
+  margin-top: 25px;
+}
+
+/*İletişim sayfası başlığı için font,renk ve boşluk ayarları*/
+.contact-title {
+  text-align: center;
+  font-family: 'Playfair Display', serif; 
+  font-size: 30px;
+  font-weight: 700;
+  color: #1b0707; 
+  margin-top: -12px !important;
+  padding-top: 0 !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 1px !important;
+}
+
+/*İletişim sayfası alt metni için hizalama,genişlik ve okunabilirlik ayarları*/
+.contact-subtitle {
+  text-align: justify !important;        
+  text-align-last: center; 
+  max-width: 630px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  color: #1b0707;
+  line-height: 1.8;
+  font-size: 14px;
+  margin-top: 0 !important;
+  margin-bottom: 40px !important;
+  display: block;
+  hyphens: auto;
+}
+
+/*İletişim sayfası container genişliğini sınırlayarak içeriği ortalama*/
+.contact-section .container {
+  max-width: 600px;
+  width: 100%;
+}
+
+/*İçeriği ortalayan,kart görünümlü ana kutu tasarımı*/
+.contact-card {
+  max-width: 520px;
+  margin: -12px auto 80px auto !important; 
+  background: #ffff;
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*İletişim öğelerini dikeyde ortalayan ve düzenli aralık veren stil*/
+.contact-item {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  padding: 18px 0;
+  width: 100%;
+}
+
+/*Son öğe hariç tüm iletişim öğelerinin altına ayırıcı çizgi ekler*/
+.contact-item:not(:last-child) {
+  border-bottom: 1px solid #f1e4e4;
+}
+
+/*İletişim ikonlarına altın gradyan efektli metin görünümü kazandırır*/
+.contact-item i {
+  font-size: 24px;
+  background: linear-gradient(
+    to bottom,
+    #bf953f 0%,
+    #fcf6ba 45%,
+    #b38728 55%,
+    #fbf5b7 65%,
+    #aa771c 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/*İletişim öğelerindeki açıklama metinlerinin font, renk ve okunurluk ayarları*/
+.contact-item span {
+  font-size: 13px;
+  color:#1b0707;
+  display: block;
+  opacity: 0.8;
+}
+
+/*İletişim öğelerindeki ana metnin yazı boyutu,kalınlık ve renk ayarları*/
+.contact-item p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1b0707;
+}
+
+
+
+
+
+
+

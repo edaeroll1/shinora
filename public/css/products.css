@@ -1,0 +1,17 @@
+/*Ürünlerimiz sayfası başlığı genel stil ayarları*/
+.shinora-page-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 30px !important; 
+    font-weight: 1000 !important;
+    text-align: center !important;
+    color: #1b0707 !important; 
+    margin-top: 40px !important; 
+    margin-bottom: 40px !important;
+    display: block !important;
+    width: 100% !important;
+    letter-spacing: 1px !important;
+}
+
+
+
+

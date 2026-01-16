@@ -1,0 +1,200 @@
+<!--Sayfa başlığı,karakter seti,favicon ve Bootstrap/CSS bağlantıları-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+  <title>Admin | SHINORA</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/admin.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/images/logo/1.png">
+</head>
+
+<body>
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-dark shinora-navbar fixed-top">
+  <div class="container-fluid px-lg-5 d-flex flex-column"> 
+  <div class="row w-100 align-items-center mb-4">
+  <div class="col-4 d-flex justify-content-start">
+  <a class="navbar-brand shinora-logo-text shinora-logo" href="/">SHINORA<span class="logo-sparkle">✦</span></a>
+  </div>
+
+<div class="col-4 d-flex justify-content-center">
+  <form action="/products" method="GET" class="search-wrapper w-100" style="max-width: 320px;" id="searchForm">
+  <input type="text" name="search" id="searchInput" class="shinora-search-input" autocomplete="off">
+  <i class="fas fa-search" id="searchIcon" onclick="document.getElementById('searchForm').submit();"></i>
+  </form>
+</div>
+
+<div class="col-4 d-flex justify-content-end align-items-center gap-3">
+    <a href="/#about" class="nav-icon" title="Hakkımızda"><i class="fas fa-gem"></i></a>
+    <a href="/contact" class="nav-icon" title="İletişim"><i class="fas fa-envelope"></i></a>
+    <a href="/sepet" class="nav-icon position-relative" title="Sepetim"><i class="fas fa-shopping-bag"></i>
+    <span id="cartCount" class="badge rounded-pill position-absolute" style="top: -5px; right: -5px;">0</span></a>
+    <a href="/admin" class="nav-icon" title="Yönetim Paneli"><i class="fas fa-user-shield"></i> </a>
+    <a href="#" class="nav-icon logout-icon" title="Çıkış Yap" onclick="logout()"><i class="fas fa-sign-out-alt"></i></a>
+</div>
+
+    <div class="collapse navbar-collapse show w-100">
+      <ul class="navbar-nav mx-auto flex-row gap-5">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/products?type=Bileklik">Bileklik</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/products?type=Bileklik&material=Altın">Altın Bileklik</a></li>
+            <li><a class="dropdown-item" href="/products?type=Bileklik&material=Gümüş">Gümüş Bileklik</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/products?type=Kolye">Kolye</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/products?type=Kolye&material=Altın">Altın Kolye</a></li>
+            <li><a class="dropdown-item" href="/products?type=Kolye&material=Gümüş">Gümüş Kolye</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/products?type=Yüzük">Yüzük</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/products?type=Yüzük&material=Altın">Altın Yüzük</a></li>
+            <li><a class="dropdown-item" href="/products?type=Yüzük&material=Pırlanta">Pırlanta Yüzük</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/products?type=Küpe">Küpe</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/products?type=Küpe&material=Altın">Altın Küpe</a></li>
+            <li><a class="dropdown-item" href="/products?type=Küpe&material=Gümüş">Gümüş Küpe</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/products?type=Saat">Saat</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--Navbar için üst boşluk-->
+<div class="navbar-spacer"></div>
+
+<!--Admin panelinde gelen siparişlerin listelendiği tablo alanı-->
+<div class="container mt-5">
+  <div class="row mb-5">
+    <div class="col-12 text-center"> <h2 class="fw-bold mb-3 gold-gradient-text">Gelen Siparişler</h2>
+
+      <div class="table-responsive border rounded shadow-sm bg-white">
+        <table class="table table-hover mb-0">
+          <thead class="table-dark sticky-top">
+            <tr>
+             <th><span>ÜRÜN</span></th>
+             <th><span>MÜŞTERİ</span></th>
+             <th><span>TELEFON</span></th>
+             <th><span>ADRES</span></th>
+             <th><span>TARİH</span></th>
+            </tr>
+          </thead>
+          <tbody id="ordersTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!--Kartları aynı yükseklikte hizalayan ve aralarına boşluk veren satır-->
+  <div class="row align-items-stretch g-4"> 
+    
+    <!--Ürün adı,tür,materyal,fiyat,görsel ve açıklama bilgilerini içeren ürün ekleme formu-->
+    <div class="col-lg-4 d-flex flex-column"> 
+      <h2 class="mb-4 fw-bold text-dark text-center">Ürün Ekle</h2> <div class="p-4 border rounded shadow-sm bg-white w-100 d-flex flex-column flex-grow-1">
+        <form id="productForm" class="d-flex flex-column flex-grow-1">
+          <div class="mb-3">
+            <label class="small fw-bold">Ürün Adı</label>
+            <input type="text" id="name" class="form-control" required>
+          </div>
+          
+     <div class="row g-2">
+    <div class="col-6 mb-3">
+        <label class="small fw-bold">Tür</label>
+        <select id="type" class="form-select">
+            <option value="" selected></option> <option value="Bileklik">Bileklik</option>
+            <option value="Kolye">Kolye</option>
+            <option value="Yüzük">Yüzük</option>
+            <option value="Küpe">Küpe</option>
+            <option value="Saat">Saat</option>
+        </select>
+    </div>
+    
+    <div class="col-6 mb-3">
+        <label class="small fw-bold">Materyal</label>
+        <select id="material" class="form-select">
+            <option value="" selected></option> <option value="Altın">Altın</option>
+            <option value="Gümüş">Gümüş</option>
+            <option value="Pırlanta">Pırlanta</option>
+            <option value="Çelik">Çelik</option>
+        </select>
+    </div>
+</div>
+         <div class="row g-2">
+            <div class="col-6 mb-3"><label class="small fw-bold">Fiyat (₺)</label><input type="number" id="price" class="form-control"></div>
+            <div class="col-6 mb-3"><label class="small fw-bold">Ağırlık</label><input type="text" id="weight" class="form-control"></div>
+          </div>
+
+          <div class="mb-3">
+    <label class="small fw-bold">Resim Yolu</label>
+    <input type="text" id="imageFolder" class="form-control"> </div>
+          
+          <div class="row g-2">
+            <div class="col-6 mb-3"><label class="small fw-bold">Taş</label><input type="text" id="stone" class="form-control"></div>
+            <div class="col-6 mb-3"><label class="small fw-bold">Garanti</label><input type="text" id="warranty" class="form-control"></div>
+          </div>
+
+          <div class="mb-3 flex-grow-1 d-flex flex-column">
+            <label class="small fw-bold">Açıklama</label>
+            <textarea id="description" class="form-control flex-grow-1"></textarea>
+          </div>
+          
+          <button type="submit" class="admin-btn w-100 py-2 fw-bold mt-2">
+    <span class="gold-text">Ürünü Kaydet</span>
+</button>
+       </form>
+      </div>
+    </div>
+    
+    <!--Admin panelinde sistemde kayıtlı mevcut ürünlerin listelendiği alan-->
+    <div class="col-lg-8 d-flex flex-column">
+        <h2 class="fw-bold mb-4 text-center gold-gradient-text">Mevcut Ürünler</h2>
+ <div class="admin-scroll-wrapper flex-grow-1">
+            <div id="adminProductList" class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3">
+                </div>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+<!--Sayfa alt bilgisi (footer)-->
+<footer class="shinora-navbar text-white text-center p-4 mt-5">
+  <p class="mb-0 opacity-50 small">
+    © 2026 SHINORA – TÜM HAKLARI SAKLIDIR
+  </p>
+</footer>
+
+<!--Admin paneli işlevleri ve Bootstrap etkileşimleri için JavaScript dosyaları-->
+<script src="/js/admin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!--Sepetteki ürün sayısını güncelleyen script-->
+<script>
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const countElement = document.getElementById("cartCount");
+    if (countElement) countElement.innerText = cart.length;
+  }
+  updateCartCount();
+</script>
+</body>
+</html>

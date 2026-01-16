@@ -1,0 +1,280 @@
+/*Sepet sayfası başlığı genel stil ayarları*/
+.cart-page-title, 
+.container h2 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 28px !important;
+    font-weight: 700 !important;
+    color: #1b0707 !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-top: -25px !important;   
+    margin-bottom: 50px !important; 
+    position: relative !important;
+    z-index: 10;
+}
+
+/*Sayfa alt boşluk ayarı*/
+.container.mt-5 {
+    padding-bottom: 120px !important; 
+}
+
+/*Container içindeki satırlar için eşit yükseklik hizalaması*/
+.container > .row {
+    display: flex !important;
+    align-items: stretch !important; 
+}
+
+/*Sepet sayfası kolonları genel düzen ayarları*/
+.col-md-8, .col-md-4 {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/*Sepet sayfasında ürünlerin listelendiği alanın boyut, kaydırma ve tasarım ayarları*/
+#cartList {
+    height: 500px !important;
+    max-height: 500px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    border-radius: 10px !important;
+    border: none !important;
+    background-color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 0 !important;
+    padding-right: 15px !important;
+}
+
+/*Sepet sayfası bilgilendirme ve güvenli ödeme kutuları genel stil ayarları*/
+.bg-light.rounded.small, 
+.secure-payment-box { 
+    margin-top: auto !important; 
+    background-color: white !important;
+    border-radius: 10px !important;
+    padding: 15px !important;
+}
+
+/*Ödeme butonu yazısı ve boş sepet ikonunda altın gradyan efekti*/
+.checkout-btn-gold span, 
+.empty-cart-icon {
+    background-image: linear-gradient(to bottom, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c) !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+/*Sepet sayfası alışverişi tamamla butonu genel stil ayarları*/
+.checkout-btn-gold {
+    background-color: #1b0707 !important; 
+    border: 1px solid #bf953f !important; 
+    border-radius: 8px !important;
+    padding: 15px 35px !important; 
+    text-decoration: none !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-top: 25px !important; 
+}
+
+/*Sepet sayfası alışverişi tamamla buton yazısı genel stil ayarları*/
+.checkout-btn-gold span {
+    background-image: linear-gradient(to bottom, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 900 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/*Alışverişi tamamla butonu hover stili*/
+.checkout-btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(191, 149, 63, 0.4) !important;
+}
+
+/*Sağ kolon sipariş özeti,ara toplam ve kargo yazıları stil ayarları*/
+.col-md-4 .fw-bold.border-bottom,
+.col-md-4 .text-muted,
+.col-md-4 #subTotal {
+    color: #1b0707 !important;
+    opacity: 1 !important; 
+    font-size: 16px;
+}
+
+/*Toplam yazısı stil ayarları*/
+.col-md-4 .fw-bold.h5 {
+    color: #1b0707 !important;
+    font-size: 16px;
+}
+
+/*Güvenli ödeme bilgilendirme metni stil ayarları*/
+.bg-light.rounded.small.text-muted {
+    color: #1b0707 !important;
+    font-size: 16px;
+}
+
+/*Sepet silme butonu stili*/
+.btn-link.text-danger {
+    color: #1b0707 !important; 
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    padding: 8px 15px !important;
+    display: inline-block;
+    width: auto !important; 
+    margin: 0 auto;
+    font-weight: 600;
+    margin-top: 14px;
+}
+
+/*Sepet ürün silme butonu hover stili*/
+.btn-link.text-danger:hover {
+    color: #bf953f !important; 
+    text-decoration: none !important;
+    transform: scale(1.05);
+}
+
+/*Sepet ürün silme butonu için alt çizgi animasyonu*/
+.btn-link.text-danger::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: #bf953f;
+    transition: width .3s;
+    margin: 0 auto;
+}
+
+/*Hover'da alt çizgiyi %100 genişletme*/
+.btn-link.text-danger:hover::after {
+    width: 100%;
+}
+
+/*Sepette listelenen ürün kartlarının genel stil ayarları*/
+.cart-item-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(191, 149, 63, 0.1) !important; 
+    border-radius: 12px !important;
+    transition: all 0.3s ease;
+}
+
+/*Sepet ürün kartlarının hover durumunda hareket ve vurgu efekti*/
+.cart-item-card:hover {
+    transform: translateX(5px); 
+    border-color: #bf953f !important; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/*Sepetten ürün silme butonu stil ayarları*/
+.cart-remove-btn {
+    background: none !important;
+    border: 1px solid #dee2e6 !important;
+    color: #dee2e6 !important;
+    width: 35px;
+    height: 35px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/*Sepet ürün silme butonu hover stil ayarları*/
+.cart-remove-btn:hover {
+    background-color: #1b0707 !important;
+    color: #bf953f !important; 
+    border-color: #1b0707 !important;
+}
+
+/*Sepet toplam fiyat görünüm ayarları*/
+#totalPrice, 
+.text-warning.h5#totalPrice {
+    color: #1b0707 !important; 
+    -webkit-text-fill-color: #1b0707 !important; 
+    font-weight: 700 !important;
+    font-size: 16px !important;
+}
+
+/*Sipariş özeti bölümünde ücretsiz metninin renk ayarı*/
+.col-md-4 span.text-success {
+    color: #1b0707 !important;
+    
+}
+
+/*Sepet ürün silme ikon stili*/
+.cart-item-card .btn.text-danger i {
+    background-image: linear-gradient(
+        to bottom,
+        #b08a32 0%,
+        #e9ddb0 45%,
+        #b38728 55%,
+        #e6d8a8 65%,
+        #9c6a17 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.15rem;
+    transition: all 0.3s ease;
+}
+
+/*Sepetten ürün kaldırma ikon hover efektleri*/
+.cart-item-card .btn.text-danger:hover i {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 6px rgba(179, 135, 40, 0.6));
+}
+
+/*Sepet listesinin kaydırma çubuğu boyut ayarı*/
+#cartList::-webkit-scrollbar {
+    width: 7px !important; 
+}
+
+/*Sepet kaydırma çubuğu arka plan rengi ve yuvarlatma*/
+#cartList::-webkit-scrollbar-track {
+    background: #f2d9de !important; 
+    border-radius: 10px;
+}
+
+/*Sepet scrollbar thumb tasarımı*/
+#cartList::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        to bottom,
+        #b08a32 0%,
+        #e9ddb0 45%,
+        #b38728 55%,
+        #e6d8a8 65%,
+        #9c6a17 100%
+    ) !important;
+    border-radius: 10px;
+    border: 1px solid #1b0707; 
+}
+
+/*Scrollbar thumb hover parlaklık ayarı*/
+#cartList::-webkit-scrollbar-thumb:hover {
+    filter: brightness(1.2);
+}
+
+/*Sepet ürün görseli (küçük resim) boyut ve görünüm ayarları*/
+.cart-item-img { 
+    width: 80px;
+    height: 80px; 
+    object-fit: contain; 
+    background: #f8f8f8; 
+    border-radius: 8px;
+}
+
+/*Boş sepet durumu ikonunun boyut ayarı*/
+.empty-cart-icon { 
+    font-size: 4rem; 
+}
+
+
+

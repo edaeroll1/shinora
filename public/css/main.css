@@ -1,0 +1,360 @@
+/*Sayfa arka plan rengi ve varsayılan boşluk ayarları*/
+body {
+    background-color: #f2d9de;
+    margin: 0;
+    padding: 0;
+}
+
+/*Navbar arka plan,boyut ve geçiş efektleri*/
+.shinora-navbar {
+    background-color: #1b0707 !important;
+    border-bottom: 1px solid #252525;
+    padding: 15px 0 !important;
+    min-height: 140px;
+    transition: all 0.3s ease;
+}
+
+/*Logo yazısı için font,altın gradyan ve gölge stili*/
+.shinora-logo-text {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.5rem !important;
+    letter-spacing: 8px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    background: linear-gradient(
+        to bottom,
+        #b08a32 0%,
+        #e9ddb0 45%,
+        #b38728 55%,
+        #e6d8a8 65%,
+        #9c6a17 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+}
+
+/*Footer navbar içeriğini ortalayan temel düzen*/
+footer.shinora-navbar {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    min-height: 100px; 
+    padding: 0 !important; 
+}
+
+/*Navbar ve admin link yazı stili*/
+.navbar-nav .nav-link,
+.admin-link {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 1rem !important;
+    font-weight: 700 !important;
+    text-transform: capitalize !important;
+    letter-spacing: 2px !important;
+    text-decoration: none !important;
+    background: linear-gradient(
+        to bottom,
+        #b08a32 0%,
+        #e9ddb0 45%,
+        #b38728 55%,
+        #e6d8a8 65%,
+        #9c6a17 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/*Navbar ve admin link hover efekti*/
+.navbar-nav .nav-link:hover,
+.admin-link:hover {
+    filter: brightness(1.15) drop-shadow(0 0 8px rgba(252,246,186,0.6));
+    transform: translateY(-1px);
+}
+
+/*Arama alanı kapsayıcı stil ayarları*/
+.search-wrapper {
+    position: relative;
+    border-bottom: 2px solid rgba(191, 170, 110, 0.6);
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px !important; 
+}
+
+/*Arama input alanının yazı ve görünüm stilleri*/
+.shinora-search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 6px 45px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem; 
+    background-image: linear-gradient(
+        to bottom,
+        #b08a32 0%,
+        #e9ddb0 45%,
+        #b38728 55%,
+        #e6d8a8 65%,
+        #9c6a17 100%
+    ) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 700 !important; 
+}
+
+/*Arama ikonunun konum ve stil ayarları*/
+#searchIcon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2rem !important;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(
+        to bottom, 
+        #b08a32, 
+        #e9ddb0, 
+        #b38728, 
+        #e6d8a8, 
+        #9c6a17
+    ) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+    font-weight: 900 !important; 
+}
+
+/*Arama ikonuna hover efekti*/
+#searchIcon:hover {
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(179,135,40,0.5));
+    transform: translateY(-50%) scale(1.1);
+}
+
+/*Dropdown menüyü hover ile görünür yapma*/
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block !important;
+    opacity: 1;
+    visibility: visible;
+}
+
+/*Dropdown menünün arka plan, kenarlık ve gölge stil ayarları*/
+.dropdown-menu {
+    background-color: rgba(27, 7, 7, 0.96) !important; 
+    min-width: 210px !important; 
+    padding: 15px 0 !important;
+    border: 1px solid rgba(179, 135, 40, 0.5) !important; 
+    border-radius: 8px !important; 
+    text-align: left !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4) !important;
+    backdrop-filter: blur(5px); 
+}
+
+/*Dropdown menü öğelerinin genel yazı stili*/
+.dropdown-item {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 1.5px !important;
+    background: linear-gradient(
+        to bottom,
+        #bf953f 0%,
+        #fcf6ba 45%,
+        #b38728 55%,
+        #fbf5b7 65%,
+        #aa771c 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/*Dropdown menü öğeleri için hover efekti*/
+.dropdown-item:hover {
+    background-color: #262626 !important;
+    filter: brightness(1.25);
+}
+
+/*Yuvarlak çerçeveli,sade görünümlü ikon buton stili*/
+.btn-outline-warning {
+    border: 1.5px solid #bfc1c4 !important;
+    color: #bfc1c4 !important;
+    background: transparent !important;
+    border-radius: 50% !important;
+    width: 42px;
+    height: 42px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/*Buton için hover durumunda renk ve vurgu efekti*/
+.btn-outline-warning:hover {
+    background-color: #b38728 !important;
+    color: #000 !important;
+    border-color: #b38728 !important;
+    box-shadow: 0 0 15px rgba(179,135,40,0.4);
+}
+
+/*Sepet ürün sayacı stil ayarları*/
+#cartCount {
+    background-color: #b38728 !important; 
+    color: #1b0707 !important;
+    border: 1px solid #fcf6ba; 
+    font-weight: bold;
+    font-size: 0.65rem; 
+    padding: 3px 5px;
+}
+
+/*Büyük ekranlarda navbar yerleşim ve hizalama ayarları*/
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important;
+        justify-content: space-between;
+    }
+    .navbar-nav.mx-auto {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/*Küçük ekranlarda navbar hizalama ve konum ayarları*/
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        text-align: center;
+    }
+    .navbar-nav.mx-auto {
+        position: static;
+        transform: none;
+        margin: 20px 0;
+    }
+}
+
+/*Navbar ikonları için boyut,çerçeve ve hizalama stili */
+.nav-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid rgba(191, 170, 110, 0.5);
+    border-radius: 50%;
+    color: #cbb26a;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/*Navbar ikonları için hover efektleri */
+.nav-icon:hover {
+    background-color: rgba(179, 135, 40, 0.15);
+    color: #fcf6ba;
+    box-shadow: 0 0 12px rgba(179,135,40,0.4);
+    transform: translateY(-1px);
+}
+
+/*Navbar ile içerik arasında boşluk oluşturmak için kullanılan ayırıcı*/
+.navbar-spacer {
+    display: block;
+    width: 100%;
+    height: 180px;
+}
+
+/*Kart ve ürün başlıkları için temel metin stilleri*/
+.card h6.fw-bold, 
+#productList h6 {
+    color: #1b0707 !important; 
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/*Kart ve liste metinleri için genel stil ayarı*/
+.card .text-warning, 
+#productList .text-warning {
+    color: #1b0707 !important; 
+    font-size: 1.1rem;
+    font-weight: 700 !important;
+}
+
+/*Kartların genel görünüm ayarları*/
+.card {
+    border: none !important;
+    background-color: #ffffff !important;
+    padding: 15px;
+}
+
+/*Kart,ürün listesi ve sepete ekle koyu butonlarının ortak stili*/
+.card .btn-dark, 
+#productList .btn-dark,
+#addToCartBtn {
+    background-color: #1b0707 !important;
+    border: 1px solid #bf953f !important;
+    color: transparent !important;
+}
+
+/*Kart,ürün listesi ve sepete ekle koyu butonlarının yazı stili*/
+.card .btn-dark span,
+#productList .btn-dark span,
+#addToCartBtn span {
+    background: linear-gradient(
+        to bottom,
+        #bf953f 0%,
+        #fcf6ba 45%,
+        #b38728 55%,
+        #fbf5b7 65%,
+        #aa771c 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+/*Koyu buton hover efekti */
+.card .btn-dark:hover,
+#productList .btn-dark:hover,
+#addToCartBtn:hover {
+    box-shadow: 0 0 12px rgba(179,135,40,0.35);
+    border-color: #fcf6ba !important;
+}
+
+/*Logo süsleme efekti*/
+.logo-sparkle {
+  position: absolute;
+  right: -16px;       
+  font-size: 18px;   
+  line-height: 1;
+  background: linear-gradient(
+    to bottom,
+    #b08a32 0%,
+    #e9ddb0 45%,
+    #b38728 55%,
+    #e6d8a8 65%,
+    #9c6a17 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 4px rgba(212,175,55,0.6));
+  pointer-events: none;
+}
+
+
+
+

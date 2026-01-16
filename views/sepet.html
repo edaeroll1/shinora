@@ -1,0 +1,217 @@
+<!--Sayfa başlığı, karakter seti, Bootstrap, fontlar ve sepet sayfasına ait stil dosyaları-->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sepetim | SHINORA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/sepet.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!--NAVBAR-->
+<nav class="navbar navbar-expand-lg navbar-dark shinora-navbar fixed-top">
+  <div class="container-fluid px-lg-5 d-flex flex-column"> 
+  <div class="row w-100 align-items-center mb-4">
+  <div class="col-4 d-flex justify-content-start">
+  <a class="navbar-brand shinora-logo-text shinora-logo" href="/">SHINORA<span class="logo-sparkle">✦</span></a>
+  </div>
+
+<div class="col-4 d-flex justify-content-center">
+  <form action="/products" method="GET" class="search-wrapper w-100" style="max-width: 320px;" id="searchForm">
+  <input type="text" name="search" id="searchInput" class="shinora-search-input" autocomplete="off">
+  <i class="fas fa-search" id="searchIcon" onclick="document.getElementById('searchForm').submit();"></i>
+  </form>
+</div>
+
+<div class="col-4 d-flex justify-content-end align-items-center gap-3">
+    <a href="/#about" class="nav-icon" title="Hakkımızda"><i class="fas fa-gem"></i></a>
+    <a href="/contact" class="nav-icon" title="İletişim"><i class="fas fa-envelope"></i></a>
+    <a href="/sepet" class="nav-icon position-relative" title="Sepetim"><i class="fas fa-shopping-bag"></i>
+    <span id="cartCount" class="badge rounded-pill position-absolute" style="top: -5px; right: -5px;">0</span></a>
+    <a href="/admin" class="nav-icon" title="Yönetim Paneli"><i class="fas fa-user-shield"></i> </a>
+</div>
+
+    <div class="collapse navbar-collapse show w-100">
+      <ul class="navbar-nav mx-auto flex-row gap-5">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/products?type=Bileklik">Bileklik</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/products?type=Bileklik&material=Altın">Altın Bileklik</a></li>
+            <li><a class="dropdown-item" href="/products?type=Bileklik&material=Gümüş">Gümüş Bileklik</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/products?type=Kolye">Kolye</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/products?type=Kolye&material=Altın">Altın Kolye</a></li>
+            <li><a class="dropdown-item" href="/products?type=Kolye&material=Gümüş">Gümüş Kolye</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/products?type=Yüzük">Yüzük</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/products?type=Yüzük&material=Altın">Altın Yüzük</a></li>
+            <li><a class="dropdown-item" href="/products?type=Yüzük&material=Pırlanta">Pırlanta Yüzük</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/products?type=Küpe">Küpe</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/products?type=Küpe&material=Altın">Altın Küpe</a></li>
+            <li><a class="dropdown-item" href="/products?type=Küpe&material=Gümüş">Gümüş Küpe</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/products?type=Saat">Saat</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--Sabit navbar nedeniyle oluşan üst boşluğu dengelemek için boşluk alanı-->
+<div class="navbar-spacer" style="height: 180px;"></div>
+  
+  <!--Alışveriş sepeti ve sipariş özeti alanı-->
+  <div class="container mt-5">
+    <h2 class="cart-page-title">Alışveriş Sepetim</h2>
+    
+    <div class="row">
+      <div class="col-md-8">
+        <div id="cartList" class="card shadow-sm p-4 border-0">
+          <p class="text-center text-muted py-5">Sepetiniz şu an yükleniyor</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-sm p-4 bg-white border-0">
+          <h5 class="fw-bold border-bottom pb-3">Sipariş Özeti</h5>
+          <div class="d-flex justify-content-between mt-3">
+            <span class="text-muted">Ara Toplam:</span>
+            <span class id="subTotal">0 ₺</span>
+          </div>
+          <div class="d-flex justify-content-between mt-2">
+            <span class="text-muted">Kargo:</span>
+            <span class="text-success">Ücretsiz</span>
+          </div>
+          <hr>
+         <div class="d-flex justify-content-between mb-4">
+    <span class="fw-bold h5">Toplam:</span>
+    <span class="fw-bold h5" id="totalPrice" style="color: #bf953f !important;">0 ₺</span>
+</div>
+          
+          <a href="/siparis" id="checkoutBtn" class="btn checkout-btn-gold w-100 disabled">
+    <span>ALIŞVERİŞİ TAMAMLA</span>
+</a>
+          <button onclick="clearCart()" class="btn btn-link text-danger w-100 btn-sm mt-3 text-decoration-none">Sepeti Temizle</button>
+        </div>
+        
+        <div class="mt-4 p-3 bg-light rounded small text-muted border border-white">
+            🛡️ <b>Güvenli Ödeme:</b> Sipariş bilgileriniz SHINORA güvencesiyle korunmaktadır.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--Sayfa alt bilgisi (footer)-->
+  <footer class="shinora-navbar text-white text-center p-4">
+  <p class="mb-0 opacity-50 small"> © 2026 SHINORA – TÜM HAKLARI SAKLIDIR</p>
+  </footer>
+   
+  <!--Bootstrap JS dosyası-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!--Sayfa yüklendiğinde:
+   Aktif menü linkini belirler
+   Sepeti localStorage’dan okur
+   Ürünleri listeler ve toplam fiyatı hesaplar
+   Sepetten ürün silme ve sepeti temizleme işlemlerini yönetir
+   -->
+
+  <script>
+    document.querySelectorAll('.nav-link').forEach(link => {
+
+    if (link.getAttribute('href') !== window.location.pathname) {
+
+        link.classList.remove('active');
+
+    } else {
+
+        link.classList.add('active');
+
+    }
+
+}); 
+function renderCart() {
+    const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+    const cartList = document.getElementById("cartList");
+    const totalPriceElement = document.getElementById("totalPrice");
+    const subTotalElement = document.getElementById("subTotal");
+    const cartCountElement = document.getElementById("cartCount");
+    const checkoutBtn = document.getElementById("checkoutBtn");
+
+    let total = 0;
+
+    if (cartCountElement) cartCountElement.innerText = cart.length;
+
+    if (cart.length === 0) {
+        cartList.innerHTML = `
+          <div class="text-center py-5">
+            <i class="fas fa-shopping-bag empty-cart-icon"></i>
+            <p class="mt-3 fw-bold">Sepetiniz boş</p>
+          </div>`;
+        totalPriceElement.innerText = "0 ₺";
+        subTotalElement.innerText = "0 ₺";
+        checkoutBtn.classList.add("disabled");
+        return;
+    }
+
+    checkoutBtn.classList.remove("disabled");
+    cartList.innerHTML = "";
+
+    cart.forEach((item, index) => {
+        const itemPrice = Number(item.price); 
+        total += itemPrice;
+        
+        cartList.innerHTML += `
+          <div class="cart-item-card d-flex align-items-center p-3 mb-3">
+            <img src="${item.image}" class="cart-item-img me-3"
+                 onerror="this.src='/images/logo/1.png'">
+            <div class="flex-grow-1">
+              <div class="fw-bold">${item.name}</div>
+              <div class="text-warning">${itemPrice.toLocaleString('tr-TR')} ₺</div>
+            </div>
+            <button onclick="removeFromCart(${index})" class="btn btn-sm text-danger">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>`;
+    });
+    totalPriceElement.innerText = total.toLocaleString('tr-TR') + " ₺";
+    subTotalElement.innerText = total.toLocaleString('tr-TR') + " ₺";
+}
+    function removeFromCart(index) {
+      let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function clearCart() {
+      if(confirm("Sepeti boşaltmak istediğinize emin misiniz?")) {
+        localStorage.removeItem("cart");
+        renderCart();
+      }
+    }
+    window.onload = renderCart;
+  </script>
+</body>
+</html>

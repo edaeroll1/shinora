@@ -1,0 +1,77 @@
+/*Login butonu stil ve hover efektleri*/
+.login-btn {
+    background-color: #1b0707;
+    border: 2px solid #b38728;
+    border-radius: 8px;
+    padding: 12px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #2a0d0d;
+    transform: translateY(-2px);
+}
+
+/*Login butonu metni için altın gradyanlı, büyük harfli ve vurgulu yazı stili*/
+.login-btn-text {
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    background-image: linear-gradient(
+        to bottom,
+        #b08a32 0%,
+        #e9ddb0 45%,
+        #b38728 55%,
+        #e6d8a8 65%,
+        #9c6a17 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/*Login form input stilleri*/
+.login-card .form-control {
+    background-color: #ffffff !important;
+    border: 1.6px solid #d1b36b !important;
+    color: #1b0707 !important;
+    box-shadow: none !important;
+    padding: 8px 11px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+}
+
+/* Placeholder metni */
+.login-card .form-control::placeholder {
+    color: #9c8b7a;
+    opacity: 1;
+}
+
+/* Focus vurgusu */
+.login-card .form-control:focus {
+    border-color: #b38728 !important;
+    box-shadow: 0 0 0 2px rgba(179, 135, 40, 0.25) !important;
+}
+
+/* Chrome autofill düzeltmesi */
+.login-card input:-webkit-autofill,
+.login-card input:-webkit-autofill:hover,
+.login-card input:-webkit-autofill:focus,
+.login-card input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+    -webkit-text-fill-color: #1b0707 !important;
+    border: 1.6px solid #d1b36b !important;
+}
+
+/*Login input çerçeve ayarı*/
+.login-card input.form-control {
+    border: 1px solid #b38728 !important;
+    box-sizing: border-box !important;
+}
+
+
+
+

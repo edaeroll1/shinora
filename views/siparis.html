@@ -1,0 +1,130 @@
+<!--Sayfa başlığı,karakter seti,Bootstrap,ikonlar,site stilleri ve favicon bağlantıları -->
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Siparişi Tamamla | SHINORA</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/siparis.css">
+<link rel="icon" type="image/png" href="/images/logo/1.png">
+</head>
+
+<body>
+<!--Sipariş özeti ve müşteri bilgi formu alanı-->
+<div class="container mt-5 mb-5">
+<div class="row justify-content-center">
+<div class="col-md-6">
+
+<!--Kart-->
+<div class="card siparis-card">
+<div class="card-body p-4 siparis-form">
+
+<!--Sipariş özeti-->
+<div id="sepetOzeti" class="siparis-ozet mb-4 p-3">
+<h6 class="fw-bold mb-3 siparis-ozet-baslik">Sipariş Özeti:</h6>
+<ul id="urunListesi" class="list-unstyled small mb-2"></ul>
+<hr>
+
+<div class="d-flex justify-content-between align-items-center">
+<span class="fw-bold">Ödenecek Toplam:</span>
+<span id="toplamTutar" class="h5 siparis-toplam mb-0">0 ₺</span>
+</div>
+</div>
+
+<!--Form-->
+<form id="siparisFormu">
+<input type="hidden" id="p_name">
+
+<div class="mb-3">
+<label class="form-label small fw-bold">Adınız Soyadınız</label>
+<input type="text" id="c_name" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label small fw-bold">Telefon Numaranız</label>
+<input type="tel" id="c_phone" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label small fw-bold">Teslimat Adresi</label>
+<textarea id="c_address" class="form-control" required></textarea>
+</div>
+
+<div class="alert siparis-info small py-2">ℹ️ Ödeme kapıda kartla yapılacaktır.</div>
+
+<!--Buton-->
+<button type="submit" id="submitBtn" class="confirm-order-btn">
+<span>SİPARİŞİ ONAYLA</span>
+</button>
+
+<!--Sepete dönme-->
+<div class="text-center mt-3">
+<a href="/sepet" class="siparis-geri-link">
+← Sepete Dön ve Düzenle
+</a>
+</div>
+
+<!--Sepet verilerini yükleyip sipariş özetini oluşturanve sipariş formunu sunucuya gönderen JavaScript işlemleri-->
+<script>
+window.onload = function() {
+const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+const urunListesi = document.getElementById("urunListesi");
+const toplamTutar = document.getElementById("toplamTutar");
+const pNameInput = document.getElementById("p_name");
+
+if (cart.length === 0) {
+alert("Sepetiniz boş!");
+window.location.href = "/products";
+return;
+}
+ let total = 0;
+ let isimler = [];
+
+ cart.forEach(item => {
+ const li = document.createElement("li");
+ li.className = "d-flex justify-content-between mb-1";
+ li.innerHTML = `<span>${item.name}</span><span>${item.price.toLocaleString("tr-TR")} ₺</span>`
+
+ urunListesi.appendChild(li);
+ total += item.price;
+ isimler.push(item.name);
+ });
+
+ toplamTutar.textContent = total.toLocaleString("tr-TR") + " ₺";
+ pNameInput.value = isimler.join(", ");
+};
+
+document.getElementById("siparisFormu").addEventListener("submit", function(e) {
+e.preventDefault();
+
+const submitBtn = document.getElementById("submitBtn");
+submitBtn.disabled = true;
+submitBtn.querySelector("span").textContent = "SİPARİŞ ALINIYOR...";
+
+fetch("/api/orders", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify({
+product_name: p_name.value,
+customer_name: c_name.value,
+phone: c_phone.value,
+address: c_address.value
+})
+})
+.then(() => {
+alert("Siparişiniz alındı");
+localStorage.removeItem("cart");
+window.location.href = "/";
+})
+.catch(() => {
+alert("Bir hata oluştu");
+submitBtn.disabled = false;
+submitBtn.querySelector("span").textContent = "SİPARİŞİ ONAYLA";
+});
+});
+</script>
+</body>
+</html>
+
