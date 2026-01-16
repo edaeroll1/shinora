@@ -44,12 +44,6 @@
     height: 40px;
 }
 
-/* Placeholder metni */
-.login-card .form-control::placeholder {
-    color: #9c8b7a;
-    opacity: 1;
-}
-
 /* Focus vurgusu */
 .login-card .form-control:focus {
     border-color: #b38728 !important;
