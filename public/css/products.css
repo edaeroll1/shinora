@@ -1,8 +1,8 @@
 /*Ürünlerimiz sayfası başlığı genel stil ayarları*/
 .shinora-page-title {
     font-family: 'Playfair Display', serif !important;
-    font-size: 30px !important; 
-    font-weight: 1000 !important;
+    font-size: 28px !important; 
+    font-weight: 700 !important;
     text-align: center !important;
     color: #1b0707 !important; 
     margin-top: 40px !important; 
@@ -12,6 +12,31 @@
     letter-spacing: 1px !important;
 }
 
+/*Products sayfası–Başlık responsive(≤991.98px)*/
+@media (max-width: 991.98px) {
+    .shinora-page-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 19px !important; 
+        font-weight: 700 !important;
+        color: #1b0707 !important;
+        text-align: center !important;
+        letter-spacing: 1px !important;
+        margin-top: -15px !important; 
+        margin-bottom: 25px !important;
+        display: block !important;
+        width: 100% !important;
+    }
+    .container {
+        padding-top: 0 !important;
+    }
+}
 
+/*Products başlık–mobil(≤575.98px)*/
+@media (max-width: 575.98px) {
+    .shinora-page-title {
+        font-size: 19px !important;
+        margin-top: -5px !important;
+    }
+}
 
 

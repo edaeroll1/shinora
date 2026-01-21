@@ -1,7 +1,7 @@
 /*Contact sayfası ana düzen ve üstten hizalama ayarları*/
 .contact-section {
   min-height: calc(100vh - 80px); 
-  background-color: #f2d9de;
+  background-color: #fceeee;
   display: flex;
   justify-content: center;
   align-items: flex-start !important; 
@@ -13,10 +13,10 @@
 .contact-title {
   text-align: center;
   font-family: 'Playfair Display', serif; 
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700;
   color: #1b0707; 
-  margin-top: -12px !important;
+  margin-top: -5px !important;
   padding-top: 0 !important;
   margin-bottom: 5px !important;
   letter-spacing: 1px !important;
@@ -104,6 +104,75 @@
   font-weight: 600;
   color: #1b0707;
 }
+
+/*Responsive iletişim sayfası(≤991px):Başlık,alt başlık ve iletişim kartı düzenlemeleri*/
+@media (max-width: 991.98px) {
+    .contact-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 19px !important;
+        font-weight: 700 !important;
+        color: #1b0707 !important;
+        text-align: center !important;
+        letter-spacing: 1px !important;
+        margin-top: 33px !important; 
+        margin-bottom: 10px !important;
+    }   
+    .contact-subtitle {
+        font-size: 13px !important;
+        line-height: 1.6 !important; 
+        padding: 0 15px !important;
+        margin-bottom: 25px !important;
+        text-align: center !important; 
+    }
+    .contact-card {
+        padding: 25px 15px !important; 
+        margin: 0 auto 40px auto !important;
+        max-width: 90% !important; 
+        border-radius: 12px !important;
+    }
+    .contact-item {
+        padding: 12px 0 !important; 
+        gap: 4px !important;
+    }
+    .contact-item i {
+        font-size: 20px !important; 
+    }
+    .contact-item span {
+        font-size: 12px !important;
+        margin-bottom: 2px !important;
+    }
+    .contact-item p {
+        font-size: 14px !important; 
+        line-height: 1.4 !important;
+    }
+    .contact-section {
+        margin-top: 5px !important;
+        padding-top: 0 !important;
+    }
+}
+
+/*Responsive iletişim sayfası(≤575px):Başlık ve iletişim kartı mobil düzenlemeleri*/
+@media (max-width: 575.98px) {
+  .contact-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 19px !important; 
+        font-weight: 700 !important;
+        text-align: center !important;
+        margin-top: 40px !important; 
+        margin-bottom: 10px !important;
+        letter-spacing: 1px !important;
+    }
+    .contact-card {
+        box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important; 
+        padding: 20px !important; 
+        border-radius: 12px !important;
+    }
+}
+
+
+
+
+
 
 
 

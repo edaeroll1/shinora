@@ -37,7 +37,7 @@
     max-height: 500px !important;
     overflow-y: auto !important;
     overflow-x: hidden !important;
-    border-radius: 10px !important;
+    border-radius: 8px !important;
     border: none !important;
     background-color: white !important;
     display: flex !important;
@@ -51,7 +51,7 @@
 .secure-payment-box { 
     margin-top: auto !important; 
     background-color: white !important;
-    border-radius: 10px !important;
+    border-radius: 8px !important;
     padding: 15px !important;
 }
 
@@ -70,7 +70,7 @@
     background-color: #1b0707 !important; 
     border: 1px solid #bf953f !important; 
     border-radius: 8px !important;
-    padding: 15px 35px !important; 
+    padding: 10px 28px !important; 
     text-decoration: none !important;
     display: inline-flex !important;
     align-items: center;
@@ -161,7 +161,7 @@
 .cart-item-card {
     background: #ffffff !important;
     border: 1px solid rgba(191, 149, 63, 0.1) !important; 
-    border-radius: 12px !important;
+    border-radius: 8px !important;
     transition: all 0.3s ease;
 }
 
@@ -276,5 +276,154 @@
     font-size: 4rem; 
 }
 
+/*Sepet sayfası responsive genel düzen (≤991.98px)*/
+@media (max-width: 991.98px) {
+    .container > .row {
+        display: block !important;
+    }
+    #cartList {
+        height: auto !important;
+        max-height: 400px !important;
+        padding-right: 5px !important;
+        margin-bottom: 20px !important;
+    }
+    .cart-item-card {
+        padding: 10px !important;
+        margin-bottom: 15px !important;
+    }
+    .cart-item-img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    .col-md-4 {
+        margin-top: 20px !important;
+        padding: 0 15px !important;
+    }
+    .empty-cart-icon {
+        font-size: 3rem !important;
+    }
+    .cart-item-card h6 {
+        font-size: 0.9rem !important;
+    }
+    .cart-item-card .text-muted {
+        font-size: 0.8rem !important;
+    }
+    .container.mt-5 {
+        padding-bottom: 60px !important;
+    }
+}
 
+/*Sepet sayfası başlık–Responsive (≤991.98px)*/
+@media (max-width: 991.98px) {
+    .cart-page-title,
+    .container h2:first-of-type {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 19px !important;
+        font-weight: 700 !important;
+        color: #1b0707 !important;
+        text-align: center !important;
+        letter-spacing: 1px !important;
+        margin-top: -5px !important;
+        display: block !important;
+        width: 100% !important;
+        line-height: 1.2 !important;
+        text-transform: none !important;
+        margin-bottom: 20px !important;
+    }
+}
 
+/*Güvenli ödeme kutusu–Responsive (≤991.98px)*/
+@media (max-width: 991.98px) {
+    .bg-light.rounded.small.text-muted,
+    .secure-payment-box {
+        margin-top: 30px !important;
+        display: block !important;
+        width: 100% !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    }
+}
+
+/*Sepet sayfası-Alışverişi tamamla butonu responsive(tablet&mobil)*/
+.checkout-btn-gold {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/*Sepet sayfası–Alışverişi tamamla butonu responsive (tablet–max 991.98px)*/
+@media (max-width: 991.98px) {
+    .checkout-btn-gold {
+        max-width: 300px !important;
+        padding: 10px 0 !important;
+        margin-top: 15px !important;
+    }
+    .checkout-btn-gold span {
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        letter-spacing: 1px !important;
+        line-height: 1 !important;
+    }
+}
+
+/*Sepet sayfası–Alışverişi tamamla butonu responsive (mobil–max 575.98px)*/
+@media (max-width: 575.98px) {
+    .checkout-btn-gold {
+        max-width: 220px !important;
+        padding: 10px 0 !important;
+    }
+    .checkout-btn-gold span {
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        letter-spacing: 1.2px !important;
+        line-height: 1 !important;
+        text-transform: uppercase !important;
+    }
+}
+
+/*Sepet ürün kartı responsive–mobil(≤575.98px)*/
+@media (max-width: 575.98px) {
+    .cart-item-card .d-flex {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    .cart-remove-btn {
+        width: 30px !important;
+        height: 30px !important;
+        margin: 10px auto !important;
+    }
+}
+
+/*Sepet sayfası–Responsive kart genişlik&radius düzeni(≤991.98px)*/
+@media (max-width: 991.98px) {
+        .col-md-8, .col-md-4 {
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        display: block !important;
+    }
+    #cartList, 
+    .secure-payment-box, 
+    .bg-light.rounded.small,
+    .cart-item-card {
+        width: 100% !important;
+        border-radius: 8px !important; 
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    #cartList {
+        max-height: none !important;
+        padding: 20px !important; 
+        border: 1px solid rgba(191, 149, 63, 0.1) !important;
+    }
+    .col-md-4 {
+        margin-top: 20px !important;
+    }
+    .secure-payment-box {
+        margin-top: 15px !important;
+    }
+}

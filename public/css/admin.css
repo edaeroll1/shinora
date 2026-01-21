@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f2d9de !important; 
+    background-color: #fceeee !important; 
 }
 
 /*Navbar link renk ve hover efektleri*/
@@ -247,6 +247,82 @@ body {
 #description {
     min-height: 100px;
 }
+
+/*≤991px Admin:Başlık ve içerik responsive düzenlemeleri*/
+@media (max-width: 991.98px) {
+    .col-12 h2.gold-gradient-text,
+    .container h2:first-of-type {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 19px !important; 
+        margin-top: -5px !important; 
+        margin-bottom: 20px !important;
+    }
+    .table-responsive {
+        max-height: 500px !important;
+        margin-bottom: 0px !important; 
+    }
+    .col-lg-4 h2 {
+        font-size: 19px !important;
+        margin-top: -35px !important; 
+        margin-bottom: 20px !important;
+    }
+    #productForm, .p-4.border.rounded {
+        margin-bottom: 15px !important;
+    }
+    .col-lg-8 h2 {
+        font-size: 19px !important;
+        margin-top: -30px !important; 
+        margin-bottom: 20px !important;
+    }
+}
+
+/*≤575px Admin:Başlık ve tablo mobil uyumlu ayarları*/
+@media (max-width: 575.98px) {
+    .col-12 h2.gold-gradient-text,
+    .container h2:first-of-type {
+        margin-top: -5px !important; 
+    }
+    .col-lg-4 h2, .col-lg-8 h2 {
+        font-size: 18px !important;
+        margin-top: -45px !important;
+    }
+    .table-responsive {
+        max-height: 450px !important;
+    }
+}
+
+/*Admin sayfası(≤991px):Sayfa başlığı ve container responsive düzenlemeleri*/
+@media (max-width: 991.98px) {
+    .shinora-page-title {
+        font-family: 'Playfair Display', serif !important;
+        font-size: 22px !important; 
+        font-weight: 700 !important;
+        color: #1b0707 !important;
+        text-align: center !important;
+        letter-spacing: 1px !important;
+        margin-top: -15px !important; 
+        margin-bottom: 25px !important; 
+        display: block !important;
+        width: 100% !important;
+    }
+    .container {
+        padding-top: 0 !important;
+    }
+}
+
+/*Responsive ≤575px Admin:Başlık mobil düzenlemesi*/
+@media (max-width: 575.98px) {
+    .shinora-page-title {
+        font-size: 19px !important;
+        margin-top: -40px !important;
+    }
+}
+
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 /*Sayfa arka plan rengi ve varsayılan boşluk ayarları*/
 body {
-    background-color: #f2d9de;
+    background-color: #fceeee;
     margin: 0;
     padding: 0;
 }
@@ -220,31 +220,6 @@ footer.shinora-navbar {
     padding: 3px 5px;
 }
 
-/*Büyük ekranlarda navbar yerleşim ve hizalama ayarları*/
-@media (min-width: 992px) {
-    .navbar-collapse {
-        display: flex !important;
-        justify-content: space-between;
-    }
-    .navbar-nav.mx-auto {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-/*Küçük ekranlarda navbar hizalama ve konum ayarları*/
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        text-align: center;
-    }
-    .navbar-nav.mx-auto {
-        position: static;
-        transform: none;
-        margin: 20px 0;
-    }
-}
-
 /*Navbar ikonları için boyut,çerçeve ve hizalama stili */
 .nav-icon {
     width: 42px;
@@ -355,6 +330,321 @@ footer.shinora-navbar {
   pointer-events: none;
 }
 
+/*Responsive navbar ve hero(≤991px):Navbar,menü,ikon,arama ve hero üst boşluk düzenlemeleri*/
+@media (max-width: 991.98px) {
+  .shinora-navbar {
+    padding: 10px 0 !important;
+  }
+  .shinora-navbar .container,
+  .shinora-navbar .container-fluid {
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .shinora-navbar .row,
+  .shinora-navbar .row.w-100 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .shinora-logo-text {
+    font-size: 1.7rem !important;
+    letter-spacing: 3px !important;
+    transform: translateY(-8px) !important;
+    margin-left: -10px !important;
+  }
+  .logo-sparkle {
+    font-size: 14px !important;
+    right: -8px !important;
+  }
+  .navbar-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: auto !important;
+    margin: 0 !important;
+  }
+  .navbar-nav .nav-item {
+    text-align: center !important;
+  }
+  .navbar-nav .nav-link {
+    font-size: 12px !important;
+    padding: 5px 2px !important;
+    white-space: nowrap !important;
+  }
+  .nav-icon {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 0.8rem !important;
+    transform: translateY(-3px) !important;
+  }
+  .search-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    order: 99 !important;
+    margin-left: 8px !important;
+    position: relative !important;
+  }
+  .shinora-search-input {
+    width: 90px !important;
+    flex: 0 0 auto !important;
+  }
+   #searchIcon {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.75rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .nav-item.dropdown {
+    position: relative;
+  }
+  .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    transform: translateY(5px) !important;
+    display: none;
+    min-width: 130px !important;
+    background-color: rgba(27, 7, 7, 0.98) !important;
+    border: 1px solid rgba(191, 170, 110, 0.4) !important;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6) !important;
+    z-index: 9999 !important;
+    text-align: left !important;
+  }
+  .nav-item.dropdown:hover .dropdown-menu,
+  .nav-item.dropdown:focus-within .dropdown-menu,
+  .nav-item.dropdown:active .dropdown-menu {
+    display: block !important;
+  }
+  .dropdown-item {
+    font-size: 12px !important;
+    padding: 10px 15px !important;
+    border-bottom: 1px solid rgba(191, 170, 110, 0.1);
+    white-space: nowrap !important;
+  }
+  .dropdown-item:last-child {
+    border-bottom: none;
+  }
+  .navbar-spacer {
+    display: none !important;
+  }
+  .hero {
+    margin-top: 0 !important;
+  }
+  body {
+    padding-top: 130px !important;
+  }
+}
+
+/*Responsive navbar mobil düzenlemeleri(≤575px):Logo,menü,ikon,arama ve üst boşluk ayarları*/
+@media (max-width: 575.98px) {
+  .shinora-logo-text {
+    font-size: 28px !important;
+    letter-spacing: 2.5px !important;
+    transform: translateY(-4.5px) !important;
+    margin-left: 0 !important;
+  }
+  .logo-sparkle {
+    font-size: 13px !important;
+    right: -10px !important;
+  }
+  .navbar-nav {
+    gap: 12px !important;
+    justify-content: center !important; 
+    flex-wrap: nowrap !important;
+    margin-top: 20px !important;
+    width: 100% !important; 
+  }
+  .navbar-nav .nav-link {
+    font-size: 12px !important;
+    padding: 5px 4px !important;
+    text-align: center !important;
+  }
+  .nav-icon {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 0.7rem !important;
+    transform: translateY(-5px) !important;
+  }
+  .shinora-search-input {
+    width: 70px !important;
+    padding: 3px 28px 3px 5px !important;
+    box-sizing: border-box !important;
+  }
+  #searchIcon {
+    position: absolute !important;
+    top: 50% !important;
+    right: 0 !important;
+    transform: translateY(-50%) !important;
+    cursor: pointer;
+  }
+  .dropdown-menu {
+    min-width: 110px !important;
+    transform: translateY(2px) !important;
+  }
+  .dropdown-item {
+    padding: 8px 12px !important;
+  }
+  body {
+    padding-top: 120px !important;
+  }
+  .search-wrapper,
+  #searchIcon,
+  .shinora-search-input {
+    display: none !important;
+  }
+  .shinora-navbar > .container,
+  .shinora-navbar > .container-fluid {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .shinora-navbar .row,
+  .shinora-navbar .row.w-100 {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/*Sayfa kaydırma hizalama ayarları:Üst boşluk responsive düzenlemeleri*/
+html {
+  scroll-padding-top: 130px; 
+}
+@media (max-width: 991.98px) {
+  html {
+    scroll-padding-top: 130px; 
+  }
+}
+@media (max-width: 575.98px) {
+  html {
+    scroll-padding-top: 120px; 
+  }
+}
+
+/*Mobil (≤575px) navbar ve sayfa düzeni responsive ayarları*/
+@media (max-width: 575.98px) {
+    .shinora-navbar.fixed-top {
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 !important;
+        width: 100% !important;
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translate3d(0, 0, 0);
+        backface-visibility: hidden;
+    }
+    .nav-link, .shinora-navbar i {
+        -webkit-tap-highlight-color: transparent !important;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    section, div[id] {
+        scroll-margin-top: 100px; 
+    }
+    html, body {
+        overflow-x: hidden !important;
+        position: relative;
+        width: 100%;
+    }
+}
+
+/*Tüm cihazlarda sayfa kaydırma hareketini yumuşak yapmak için*/
+html {
+    scroll-behavior: smooth;
+}
+
+/*Tablet ve küçük ekranlar(≤991px) için dropdown menü responsive ve hover/focus ayarları*/
+@media (max-width: 991.98px) {
+    .nav-item.dropdown::after {
+        content: "";
+        position: absolute;
+        top: 70%; 
+        left: 0;
+        width: 100%;
+        height: 40px; 
+        display: block;
+        z-index: 1;
+    }
+    .dropdown-menu {
+        display: none;
+        position: absolute !important;
+        top: 85% !important; 
+        left: 0 !important;
+        margin-top: 0 !important;
+        z-index: 10000 !important;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.2s ease;
+        pointer-events: auto !important; 
+    }
+    .dropdown-item {
+        padding: 12px 20px !important; 
+        display: block !important;
+        width: 100% !important;
+        pointer-events: auto !important;
+        -webkit-tap-highlight-color: transparent !important;
+        font-size: 12px;
+    }
+}
+
+/*Mobil ekranlar(≤575px) için dropdown menü responsive ayarları ve görünürlük düzenlemeleri*/
+@media (max-width: 575.98px) {
+    .nav-item.dropdown::after {
+        content: "";
+        position: absolute;
+        top: 60%; 
+        left: -5px;
+        width: calc(100% + 10px);
+        height: 45px; 
+        display: block;
+        z-index: 1;
+    }
+    .dropdown-menu {
+        top: 85% !important; 
+        min-width: 130px !important; 
+        padding: 8px 0 !important; 
+        transform: none !important;
+    }
+    .dropdown-item {
+        font-size: 12px !important; 
+        padding: 10px 15px !important;
+        letter-spacing: 1.5px !important;
+        text-transform: capitalize !important;
+        border-bottom: 1px solid rgba(191, 170, 110, 0.1);
+        display: block !important;
+        width: 100% !important;
+    }
+    .dropdown-item:last-child {
+        border-bottom: none;
+    }
+}
+
+/*Tablet ve küçük ekranlar(≤991px) için arama çubuğu ve ikon boyut,pozisyon ve padding ayarları*/
+@media (max-width: 991.98px) {
+  .search-wrapper {
+    width: 140px !important; 
+    margin-right: 5px !important; 
+  }
+  .shinora-search-input {
+    width: 100% !important;
+    padding-right: 30px !important;
+  }
+  #searchIcon {
+    right: 0px !important; 
+    font-size: 0.85rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+  }
+}
 
 
 
