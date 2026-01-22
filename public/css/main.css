@@ -439,7 +439,8 @@ footer.shinora-navbar {
   }
 }
 
-/*Responsive navbar mobil düzenlemeleri(≤575px):Logo,menü,ikon,arama ve üst boşluk ayarları*/
+/*Responsive navbar mobil düzenlemeleri(≤575px):
+Logo,menü,ikon,arama ve üst boşluk ayarları*/
 @media (max-width: 575.98px) {
   .shinora-logo-text {
     font-size: 28px !important;
